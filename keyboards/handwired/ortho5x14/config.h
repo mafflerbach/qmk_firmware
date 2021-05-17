@@ -40,9 +40,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
-#define MATRIX_ROW_PINS { F0, F1, C7, D5, B7 }
-#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B4, E6, D7, C6, D4, D0, D1  }
-#define UNUSED_PINS
+// #define MATRIX_ROW_PINS { F0, F1, C7, D5, B7 }
+// #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B4, E6, D7, C6, D4, D0, D1  }
+
+#define MATRIX_COL_PINS {F4,F5,F6,F7,B1,B3,B2}
+#define MATRIX_ROW_PINS {D7,E6,B4,D4,C6}
+
+
+#define SPLIT_HAND_PIN D3
+#define SOFT_SERIAL_PIN D0
+
+// The 'EH' has previously forced use of I2C so this default has been kept
+// however users can undef to use serial
+#define USE_I2C
+
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW

@@ -2,11 +2,11 @@
 
 #include "quantum.h"
 
-#ifdef KEYBOARD_lets_split_rev1
+#ifdef KEYBOARD_holymoly_rev1
     #include "rev1.h"
-#elif KEYBOARD_lets_split_rev2
+#elif KEYBOARD_holymoly_rev2
     #include "rev2.h"
-#elif KEYBOARD_lets_split_sockets
+#elif KEYBOARD_holymoly_sockets
     #include "sockets.h"
 #endif
 

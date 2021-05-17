@@ -40,9 +40,9 @@ uint8_t swPin = E6;  // SW
 uint16_t minAxisValue = 0;
 uint16_t maxAxisValue = 1023;
 
-uint8_t maxCursorSpeed = 2;
+uint8_t maxCursorSpeed = 3;
 uint8_t precisionSpeed = 1;
-uint8_t speedRegulator = 20;  // Lower Values Create Faster Movement
+uint8_t speedRegulator = 10;  // Lower Values Create Faster Movement
 
 int8_t xPolarity = 1;
 int8_t yPolarity = 1;

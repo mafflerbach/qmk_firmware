@@ -1,5 +1,8 @@
 /*
+This is the c configuration file for the keymap
+
 Copyright 2012 Jun Wako <wakojun@gmail.com>
+Copyright 2015 Jack Humbert
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,19 +20,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include "config_common.h"
+ // place overrides here
+#define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
+                              SONG(COLEMAK_SOUND), \
+                              SONG(DVORAK_SOUND) \
+                            }
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0xE401
-#define DEVICE_VER      0x0E41
-#define MANUFACTURER    That-Canadian
-#define PRODUCT         Lets Split Eh?
+/* Use I2C or Serial, not both */
+#define USE_SERIAL
+// #define USE_I2C
 
-/* key matrix size */
-// Rows are doubled-up
-#define MATRIX_ROWS 10
-#define MATRIX_COLS 6
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+/* Select hand configuration */
+#define MASTER_LEFT
+// #define MASTER_RIGHT
+// #define EE_HANDS
