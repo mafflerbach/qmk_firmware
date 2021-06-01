@@ -424,10 +424,10 @@ bool transport_master(matrix_row_t matrix[]) {
 
 #    ifdef POINTING_DEVICE_ENABLE
     if (is_keyboard_left()) {
-        report_mouse_t temp_report = pointing_device_get_report();
-        temp_report.x              = serial_s2m_buffer.mouse_x;
-        temp_report.y              = serial_s2m_buffer.mouse_y;
-        pointing_device_set_report(temp_report);
+       // report_mouse_t temp_report = pointing_device_get_report();
+        //temp_report.x              = serial_s2m_buffer.mouse_x;
+       // temp_report.y              = serial_s2m_buffer.mouse_y;
+        //pointing_device_set_report(temp_report);
     }
 #    endif
 

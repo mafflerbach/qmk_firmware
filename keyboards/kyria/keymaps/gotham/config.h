@@ -43,6 +43,6 @@
 
 #ifdef THUMBSTICK_ENABLE
 #    define THUMBSTICK_FLIP_X
-#    define THUMBSTICK_PIN_X F6
-#    define THUMBSTICK_PIN_Y F7
+#    define THUMBSTICK_PIN_X B4
+#    define THUMBSTICK_PIN_Y B5
 #endif

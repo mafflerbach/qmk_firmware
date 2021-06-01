@@ -1,8 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#include "analog.h"
-#include "pointing_device.h"
-
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -13,6 +10,7 @@
 #define _FN2 2
 #define _FN3 3
 #define _FN4 4
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -84,15 +82,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  *
  * ,---------------------------------------------.           ,---------------------------------------------.
- * |        |     |     |     |     |     |      |           |      |     |    |     |     |     |        |
- * |--------+-----+-----+-----+-----+-----+------|           |------+-----+----+-----+-----+-----+--------|
- * |        | F1  | F2  | F3  | F4  | F5  |  (   |           |  )   |     | 1  |  2  |  3  |  +  | Enter  |
- * |--------+-----+-----+-----+-----+-----+------|           |------|-----+----+-----+-----+-----+--------|
- * |        | F6  | F7  | F8  | F9  | F10 |      |           |      |     | 4  |  5  |  6  |  -  |        |
- * |--------+-----+-----+-----+-----+-----+------|           |------|-----+----+-----+-----+-----+--------|
- * |        | F11 | F12 |     |     |     |      |           |      |     | 7  |  8  |  9  |  *  |        |
- * `--------+-----+-----+-----+-----+-----+------'           `------------+----+-----+-----+-----+--------'
- *  |      |      |     |     |     |     |      |           |      |     |    |  0  |  .  |  /  |        |
+ * |        | F1  | F2  | F3  | F4  | F5  |      |           |      |  1  |  2  |  3  |  +  |     |        |
+ * |--------+-----+-----+-----+-----+-----+------|           |------+-----+-----+-----+-----+-----+--------|
+ * |        | F6  | F7  | F8  | F9  | F10 |  (   |           |  )   |  4  |  5  |  6  |  -  |     | Enter  |
+ * |--------+-----+-----+-----+-----+-----+------|           |------|-----+-----+-----+-----+-----+--------|
+ * |        | F11 | F12 |     |     |     |      |           |      |  7  |  8  |  9  |  *  |     |        |
+ * |--------+-----+-----+-----+-----+-----+------|           |------|-----+-----+-----+-----+-----+--------|
+ * |        |     |     |     |     |     |      |           |      |     |  0  |  .  |  /  |     |        |
+ * `--------+-----+-----+-----+-----+-----+------'           `------------+-----+-----+-----+-----+--------'
+ *  |      |      |     |     |     |     |      |           |      |     |     |     |     |     |       |
  *  `--------------------------------------------'           '--------------------------------------------'
  * 
  *                                 ,-------------.           ,-------------.
@@ -103,11 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
 
 	[_FN2] =LAYOUT_ortho_4x12(
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_TRNS,          KC_TRNS,    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_PPLS, KC_PENT,
-		KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  LSFT(KC_9),       LSFT(KC_0), KC_TRNS, KC_4,    KC_5,    KC_6,    KC_PMNS, KC_PENT,
-		KC_TRNS, KC_F11,  KC_F12,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,    KC_TRNS, KC_7,    KC_8,    KC_9,    KC_PAST, KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,    KC_TRNS, KC_TRNS, KC_0,    KC_PDOT, KC_PSLS, KC_TRNS),
+		KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_TRNS,           KC_TRNS, KC_P1,   KC_P2,   KC_P3,   KC_PPLS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  LSFT(KC_9) ,       LSFT(KC_0), KC_P4,   KC_P5,   KC_P6,   KC_PMNS, KC_TRNS, KC_PENT,
+		KC_TRNS, KC_F11,  KC_F12,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS, KC_P7,   KC_P8,   KC_P9,   KC_PAST, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS, KC_TRNS, KC_P0,   KC_PDOT, KC_PSLS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
     
 
 /*
@@ -134,8 +132,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_FN3] =LAYOUT_ortho_4x12(
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGDOWN,         KC_PGUP, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
 		KC_TRNS, KC_TRNS, KC_WH_U, KC_MS_U, KC_WH_D, KC_TRNS, KC_INS,            KC_DEL,  LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5),    KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS, LSFT(KC_9),       LSFT(KC_0), LGUI(KC_6), LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), KC_TRNS,       KC_TRNS,
-		KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_BTN3, KC_TRNS, KC_HOME,       KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS, KC_HOME,           KC_TRNS, LGUI(KC_6), LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), KC_TRNS,       KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_BTN3, KC_TRNS, KC_TRNS,           KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS ),
     
 
@@ -170,93 +168,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-/*uint8_t swPin = E6;  // SW*/
 
-/*// Set Parameters*/
-/*uint16_t minAxisValue = 0;*/
-/*uint16_t maxAxisValue = 1023;*/
-
-/*uint8_t maxCursorSpeed = 2;*/
-/*uint8_t precisionSpeed = 1;*/
-/*uint8_t speedRegulator = 20;  // Lower Values Create Faster Movement*/
-
-/*int8_t xPolarity = 1;*/
-/*int8_t yPolarity = 1;*/
-
-/*uint8_t cursorTimeout = 10;*/
-
-/*int16_t xOrigin, yOrigin;*/
-
-/*uint16_t lastCursor = 0;*/
-
-/*int16_t axisCoordinate(uint8_t pin, uint16_t origin) {*/
-    /*int8_t  direction;*/
-    /*int16_t distanceFromOrigin;*/
-    /*int16_t range;*/
-
-    /*int16_t position = analogReadPin(pin);*/
-
-    /*if (origin == position) {*/
-        /*return 0;*/
-    /*} else if (origin > position) {*/
-        /*distanceFromOrigin = origin - position;*/
-        /*range              = origin - minAxisValue;*/
-        /*direction          = -1;*/
-    /*} else {*/
-        /*distanceFromOrigin = position - origin;*/
-        /*range              = maxAxisValue - origin;*/
-        /*direction          = 1;*/
-    /*}*/
-
-    /*float   percent    = (float)distanceFromOrigin / range;*/
-    /*int16_t coordinate = (int16_t)(percent * 100);*/
-    /*if (coordinate < 0) {*/
-        /*return 0;*/
-    /*} else if (coordinate > 100) {*/
-        /*return 100 * direction;*/
-    /*} else {*/
-        /*return coordinate * direction;*/
-    /*}*/
-/*}*/
-
-/*int8_t axisToMouseComponent(uint8_t pin, int16_t origin, uint8_t maxSpeed, int8_t polarity) {*/
-    /*int coordinate = axisCoordinate(pin, origin);*/
-    /*if (coordinate == 0) {*/
-        /*return 0;*/
-    /*} else {*/
-        /*float percent = (float)coordinate / 100;*/
-        /*if (keyboard_report->mods & MOD_BIT(KC_LSFT)) {*/
-            /*return percent * precisionSpeed * polarity * (abs(coordinate) / speedRegulator);*/
-        /*} else {*/
-            /*return percent * maxCursorSpeed * polarity * (abs(coordinate) / speedRegulator);*/
-        /*}*/
-    /*}*/
-/*}*/
-
-/*void pointing_device_task(void) {*/
-    /*report_mouse_t report = pointing_device_get_report();*/
-
-    /*// todo read as one vector*/
-    /*if (timer_elapsed(lastCursor) > cursorTimeout) {*/
-        /*lastCursor = timer_read();*/
-        /*report.x   = axisToMouseComponent(B4, xOrigin, maxCursorSpeed, xPolarity);*/
-        /*report.y   = axisToMouseComponent(B5, yOrigin, maxCursorSpeed, yPolarity);*/
-    /*}*/
-    /*//*/
-    /*if (!readPin(E6)) {*/
-        /*report.buttons |= MOUSE_BTN1;*/
-    /*} else {*/
-        /*report.buttons &= ~MOUSE_BTN1;*/
-    /*}*/
-
-    /*pointing_device_set_report(report);*/
-    /*pointing_device_send();*/
-/*}*/
-
-/*void matrix_init_keymap(void) {*/
-    /*// init pin? Is needed?*/
-    /*setPinInputHigh(E6);*/
-    /*// Account for drift*/
-    /*xOrigin = analogReadPin(B4);*/
-    /*yOrigin = analogReadPin(B5);*/
-/*}*/

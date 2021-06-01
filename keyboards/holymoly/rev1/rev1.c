@@ -1,5 +1,4 @@
 #include "holymoly.h"
-
 void matrix_init_kb(void) {
 
     // // green led on
@@ -67,6 +66,10 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 void keyboard_post_init_user(void) {
     // Enable the LED layers
     rgblight_layers = my_rgb_layers;
+  debug_enable=true;
+  debug_matrix=true;
+  //debug_keyboard=true;
+  debug_mouse=true;
 }
 
 
